@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'vcr', '~> 3.0'
   spec.add_development_dependency 'webmock', '~> 1.22'
-  spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'coveralls', '~> 0.8'
+  spec.add_development_dependency 'timecop', '~> 0.8'
+  spec.add_development_dependency 'guard-rspec', '~> 4.6'
   spec.add_development_dependency 'pry'
 end
