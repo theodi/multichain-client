@@ -7,5 +7,11 @@ module Multichain
       puts "multichain version #{VERSION}"
     end
     map %w(-v --version) => :version
+
+    desc 'hexify URL', 'Prepare a hexified string for a URL'
+    def hexify url
+      puts Encoder.hexify url
+    end
+    map %w(--encode) => :hexify
   end
 end
