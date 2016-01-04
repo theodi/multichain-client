@@ -1,5 +1,14 @@
-require "multichain/version"
+require 'multichain/version'
+require 'httparty'
 
 module Multichain
-  # Your code goes here...
+  def self.headers
+    {
+      'Accept' => 'application/json'
+    }
+  end
+
+  def self.md5 url
+    h = HTTParty.get url, headers: headers
+  end
 end
