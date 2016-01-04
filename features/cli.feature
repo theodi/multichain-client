@@ -1,3 +1,4 @@
+@vcr
 Feature: CLI
 
   Scenario: Get version
