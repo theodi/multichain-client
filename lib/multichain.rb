@@ -21,4 +21,8 @@ module Multichain
 
     a.join '|'
   end
+
+  def self.hexify url, headers = self.headers
+    input_string(url).each_byte.map { |b| b.to_s(16) }.join
+  end
 end
