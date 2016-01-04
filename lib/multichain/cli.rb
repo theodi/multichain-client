@@ -13,5 +13,11 @@ module Multichain
       puts Encoder.hexify url
     end
     map %w(--encode) => :hexify
+
+    desc 'dehexify hex', 'Dehexify a hexified string'
+    def dehexify hex
+      puts Encoder.dehexify hex
+    end
+    map %w(--decode) => :dehexify
   end
 end
