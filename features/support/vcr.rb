@@ -1,6 +1,7 @@
 require 'vcr'
 require 'webmock/cucumber'
 require 'aruba/cucumber'
+require 'aruba/in_process'
 
 VCR.configure do |c|
   c.default_cassette_options = { record: :once }
