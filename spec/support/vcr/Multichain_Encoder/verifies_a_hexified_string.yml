@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://heyre.be/snake/sheds.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Jan 2016 10:24:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1215'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d547f19a1bf928b927ee6b74c925b3cdf1451989457; expires=Wed, 04-Jan-17
+        10:24:17 GMT; path=/; domain=.heyre.be; HttpOnly
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - 1.1 vegur
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 25fe78ff806d34d0-LHR
+    body:
+      encoding: UTF-8
+      string: '{"title":"Shed","name":"sheds.csv","id":"sheds","date-field":"Shed
+        completed","type":"latest","source-url":"https://github.com/pikesley/snake-data/blob/master/sheds.csv","data":[{"Serial":"1","Blue
+        phase observed":"2014-10-13","Shed completed":"2014-10-17"},{"Serial":"2","Blue
+        phase observed":"2014-11-16","Shed completed":"2014-11-22"},{"Serial":"3","Blue
+        phase observed":"2014-12-23","Shed completed":"2014-12-31"},{"Serial":"4","Blue
+        phase observed":"2015-01-31","Shed completed":"2015-02-05"},{"Serial":"5","Blue
+        phase observed":"2015-03-01","Shed completed":"2015-03-06"},{"Serial":"6","Blue
+        phase observed":"2015-04-07","Shed completed":"2015-04-12"},{"Serial":"7","Blue
+        phase observed":"2015-05-02","Shed completed":"2015-05-07"},{"Serial":"8","Blue
+        phase observed":null,"Shed completed":"2015-06-05"},{"Serial":"9","Blue phase
+        observed":"2015-07-08","Shed completed":"2015-07-12"},{"Serial":"10","Blue
+        phase observed":"2015-08-12","Shed completed":"2015-08-15"},{"Serial":"11","Blue
+        phase observed":"2015-09-12","Shed completed":"2015-09-19"},{"Serial":"12","Blue
+        phase observed":"2015-11-01","Shed completed":"2015-11-10"},{"Serial":"13","Blue
+        phase observed":"2015-12-13","Shed completed":"2015-12-23"}]}'
+    http_version: 
+  recorded_at: Tue, 05 Jan 2016 10:24:17 GMT
+- request:
+    method: get
+    uri: http://heyre.be/snake/sheds.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Jan 2016 10:24:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1215'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4b1e5881d45615d07b5e300cefa7d3b11451989457; expires=Wed, 04-Jan-17
+        10:24:17 GMT; path=/; domain=.heyre.be; HttpOnly
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - 1.1 vegur
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 25fe78ffcb283590-LHR
+    body:
+      encoding: UTF-8
+      string: '{"title":"Shed","name":"sheds.csv","id":"sheds","date-field":"Shed
+        completed","type":"latest","source-url":"https://github.com/pikesley/snake-data/blob/master/sheds.csv","data":[{"Serial":"1","Blue
+        phase observed":"2014-10-13","Shed completed":"2014-10-17"},{"Serial":"2","Blue
+        phase observed":"2014-11-16","Shed completed":"2014-11-22"},{"Serial":"3","Blue
+        phase observed":"2014-12-23","Shed completed":"2014-12-31"},{"Serial":"4","Blue
+        phase observed":"2015-01-31","Shed completed":"2015-02-05"},{"Serial":"5","Blue
+        phase observed":"2015-03-01","Shed completed":"2015-03-06"},{"Serial":"6","Blue
+        phase observed":"2015-04-07","Shed completed":"2015-04-12"},{"Serial":"7","Blue
+        phase observed":"2015-05-02","Shed completed":"2015-05-07"},{"Serial":"8","Blue
+        phase observed":null,"Shed completed":"2015-06-05"},{"Serial":"9","Blue phase
+        observed":"2015-07-08","Shed completed":"2015-07-12"},{"Serial":"10","Blue
+        phase observed":"2015-08-12","Shed completed":"2015-08-15"},{"Serial":"11","Blue
+        phase observed":"2015-09-12","Shed completed":"2015-09-19"},{"Serial":"12","Blue
+        phase observed":"2015-11-01","Shed completed":"2015-11-10"},{"Serial":"13","Blue
+        phase observed":"2015-12-13","Shed completed":"2015-12-23"}]}'
+    http_version: 
+  recorded_at: Tue, 05 Jan 2016 10:24:17 GMT
+recorded_with: VCR 3.0.0
