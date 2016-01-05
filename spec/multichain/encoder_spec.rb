@@ -1,6 +1,3 @@
-require 'spec_helper'
-require 'timecop'
-
 module Multichain
   describe Encoder do
     it 'hashes the content of a URL', :vcr do
