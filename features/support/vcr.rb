@@ -11,3 +11,15 @@ end
 VCR.cucumber_tags do |t|
   t.tag '@vcr', use_scenario_name: true
 end
+class VcrFriendlyMain
+  def initialize argv, stdin, stdout, stderr, kernel
+    @argv, @stdin, @stdout, @stderr, @kernel = argv, stdin, stdout, stderr, kernel
+  end
+
+  def execute!
+    $stdin = @stdin
+    $stdout = @stdout
+    $stderr = @stderr
+    Multichain::CLI.start @argv
+  end
+end
