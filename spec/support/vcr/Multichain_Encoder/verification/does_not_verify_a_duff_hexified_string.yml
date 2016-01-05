@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://heyre.be/snake/length.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Jan 2016 10:34:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '474'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df1163e89b066550d2690a3ad5eb679b51451990088; expires=Wed, 04-Jan-17
+        10:34:48 GMT; path=/; domain=.heyre.be; HttpOnly
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - 1.1 vegur
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 25fe88665da83476-LHR
+    body:
+      encoding: UTF-8
+      string: '{"title":"Length","name":"length.csv","id":"length","date-field":"Date","type":"graph","source-url":"https://github.com/pikesley/snake-data/blob/master/length.csv","data":[{"Date":"2014-09-30","Length
+        in m":"0.45"},{"Date":"2014-10-09","Length in m":"0.50"},{"Date":"2014-10-18","Length
+        in m":"0.50"},{"Date":"2014-12-12","Length in m":"0.55"},{"Date":"2015-01-11","Length
+        in m":"0.60"},{"Date":"2015-01-28","Length in m":"0.65"},{"Date":"2015-08-27","Length
+        in m":"0.95"}]}'
+    http_version: 
+  recorded_at: Tue, 05 Jan 2016 10:34:49 GMT
+- request:
+    method: get
+    uri: http://heyre.be/snake/length.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Jan 2016 10:34:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '474'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d341a621b36ddf29a6f7ec7ec858546771451990089; expires=Wed, 04-Jan-17
+        10:34:49 GMT; path=/; domain=.heyre.be; HttpOnly
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - 1.1 vegur
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 25fe886d26593458-LHR
+    body:
+      encoding: UTF-8
+      string: '{"title":"Length","name":"length.csv","id":"length","date-field":"Date","type":"graph","source-url":"https://github.com/pikesley/snake-data/blob/master/length.csv","data":[{"Date":"2014-09-30","Length
+        in m":"0.45"},{"Date":"2014-10-09","Length in m":"0.50"},{"Date":"2014-10-18","Length
+        in m":"0.50"},{"Date":"2014-12-12","Length in m":"0.55"},{"Date":"2015-01-11","Length
+        in m":"0.60"},{"Date":"2015-01-28","Length in m":"0.65"},{"Date":"2015-08-27","Length
+        in m":"0.95"}]}'
+    http_version: 
+  recorded_at: Tue, 05 Jan 2016 10:34:49 GMT
+recorded_with: VCR 3.0.0
