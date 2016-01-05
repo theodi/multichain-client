@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 module Multichain
   describe Client do
 
