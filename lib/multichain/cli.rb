@@ -19,5 +19,21 @@ module Multichain
       puts Encoder.dehexify hex
     end
     map %w(--decode) => :dehexify
+
+    desc 'verify hex', 'Verify that a hexified string still represents the same URL content'
+    def verify hex
+      url = Encoder.extract(Encoder.dehexify(hex))[:url]
+      v = Encoder.verify hex
+
+      case v
+        when true
+          puts "'#{url}' is verified"
+          exit 0
+
+        when false
+          puts "'#{url}' is not verified"
+          exit 1
+      end
+    end
   end
 end
