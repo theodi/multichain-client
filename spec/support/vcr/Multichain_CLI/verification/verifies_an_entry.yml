@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://metrics.theodi.org/metrics/github-total-pull-requests
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Jan 2016 11:02:18 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '130'
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      Server:
+      - thin
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"_id":{"$oid":"54aa73d6ef922c5d10017826"},"name":"github-total-pull-requests","time":"2015-01-05T11:21:58.000+00:00","value":137}'
+    http_version: 
+  recorded_at: Wed, 06 Jan 2016 11:02:19 GMT
+recorded_with: VCR 3.0.0
