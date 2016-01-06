@@ -7,6 +7,10 @@ module Multichain
     let(:port) { "6666" }
     let(:client) { described_class.new(username, password, host, port) }
 
+    before(:each) do
+      allow(SecureRandom).to receive(:uuid) { 'whevs' }
+    end
+
     it 'constucts a url' do
       expect(client.url).to eq('http://user:password@example.com:6666')
     end
