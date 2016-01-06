@@ -6,6 +6,10 @@ module Multichain
       @password = password
       @host = host
       @port = port
+
+      config_file = "#{ENV['HOME']}/.multichain/config.yml"
+      config_file = 'spec/support/fixtures/config.yml' if ENV['TEST']
+      @config = YAML.load_file config_file
     end
 
     def auth
@@ -14,6 +18,31 @@ module Multichain
 
     def url
       "http://#{auth}@#{@host}:#{@port}"
+    end
+
+    def config
+      config_file = "#{ENV['HOME']}/.multichain/config.yml"
+      config_file = 'spec/support/fixtures/config.yml' if ENV['TEST']
+      @config ||= YAML.load_file config_file
+    end
+
+    def asset
+      config['asset']
+    end
+
+    def wallets
+      @wallets ||= Wallets.new
+    end
+
+    def send_asset recipient, amount
+      params = [
+        wallets.fetch(recipient),
+        asset,
+        amount
+      ]
+
+      s = sendassettoaddress params
+      require "pry" ; binding.pry
     end
 
     def method_missing(sym, params = [])

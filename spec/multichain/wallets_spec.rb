@@ -1,7 +1,7 @@
 module Multichain
   describe Wallets do
     let :subject do
-      described_class.new 'spec/support/fixtures/wallets.yml'
+      described_class.new
     end
 
     context 'get wallets' do

@@ -1,6 +1,8 @@
 module Multichain
   class Wallets < Hash
-    def initialize yaml_path
+    def initialize
+      yaml_path = "#{ENV['HOME']}/.multichain/wallets.yml"
+      yaml_path = 'spec/support/fixtures/wallets.yml' if ENV['TEST']
       self.update YAML.load_file yaml_path
     end
 
