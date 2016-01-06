@@ -5,6 +5,8 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'multichain'
 require 'webmock/rspec'
 require 'timecop'
+require 'dotenv'
+Dotenv.load 
 
 require_relative 'support/vcr_setup'
 
