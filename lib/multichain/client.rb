@@ -42,7 +42,6 @@ module Multichain
       ]
 
       s = sendassettoaddress params
-      require "pry" ; binding.pry
     end
 
     def method_missing(sym, params = [])
