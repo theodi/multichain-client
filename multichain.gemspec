@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'multichain client'
   spec.description   = 'multichain client'
-  spec.homepage      = 'http://github.com/theodi'
+  spec.homepage      = 'https://github.com/theodi/multichain-client'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
