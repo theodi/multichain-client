@@ -63,5 +63,19 @@ module Multichain
         expect(badoutput).to match "'http://metrics.theodi.org/metrics/github-total-pull-requests' is not verified"
       end
     end
+
+    context 'send URL' do
+      let :output do
+        capture :stdout do
+          Timecop.freeze Time.local 2016, 01, 06 do
+            subject.send_url 'stu', 'http://uncleclive.herokuapp.com/multichain'
+          end
+        end
+      end
+
+      it 'sends a URL to a wallet', :vcr do
+    #    expect(output).to match "foo"
+      end
+    end
   end
 end

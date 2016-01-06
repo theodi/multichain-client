@@ -35,5 +35,11 @@ module Multichain
           exit 1 unless ENV['TEST']
       end
     end
+
+    desc 'send_url recipient, URL', 'Send a URL to a recipient'
+    def send_url recipient, url
+      data = Client.new.send_url recipient, url
+      require "pry" ; binding.pry
+    end
   end
 end

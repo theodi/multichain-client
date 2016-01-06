@@ -2,14 +2,14 @@ module Multichain
   class Client
 
     def initialize(username, password, host, port = 2898)
-      @username = username
-      @password = password
-      @host = host
-      @port = port
+      #config_file = "#{ENV['HOME']}/.multichain/config.yml"
+      #config_file = 'spec/support/fixtures/config.yml' if ENV['TEST']
+      #@config = YAML.load_file config_file
 
-      config_file = "#{ENV['HOME']}/.multichain/config.yml"
-      config_file = 'spec/support/fixtures/config.yml' if ENV['TEST']
-      @config = YAML.load_file config_file
+      @username = config['rpc']['user']
+      @password = config['rpc']['password']
+      @host = config['rpc']['host']
+      @port = config['rpc']['port']
     end
 
     def auth
@@ -23,7 +23,18 @@ module Multichain
     def config
       config_file = "#{ENV['HOME']}/.multichain/config.yml"
       config_file = 'spec/support/fixtures/config.yml' if ENV['TEST']
-      @config ||= YAML.load_file config_file
+      @config ||= begin
+        c = YAML.load_file config_file
+        if ENV['TEST']
+          c['rpc'] = {}
+          c['rpc']['user'] = ENV['RPC_USER']
+          c['rpc']['password'] = ENV['RPC_PASSWORD']
+          c['rpc']['host'] = ENV['RPC_HOST']
+          c['rpc']['port'] = ENV['RPC_PORT']
+        end
+
+        c
+      end
     end
 
     def asset

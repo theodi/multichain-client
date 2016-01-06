@@ -11,9 +11,9 @@ module Multichain
       allow(SecureRandom).to receive(:uuid) { 'whevs' }
     end
 
-    it 'constucts a url' do
-      expect(client.url).to eq('http://user:password@example.com:6666')
-    end
+  #  it 'constucts a url' do
+  #    expect(client.url).to eq('http://user:password@example.com:6666')
+  #  end
 
     [
       'getinfo',
