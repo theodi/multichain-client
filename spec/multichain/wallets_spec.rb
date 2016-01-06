@@ -6,7 +6,7 @@ module Multichain
 
     context 'get wallets' do
       it 'has a wallet' do
-        expect(subject.fetch 'sam', 'primary').to eq '1WRmkLHymw4dVjfAdAn4Jg3JtjhmXzkBmQvGen'
+        expect(subject.fetch 'sam:primary').to eq '1WRmkLHymw4dVjfAdAn4Jg3JtjhmXzkBmQvGen'
       end
 
       it 'gets the default wallet for a user' do
