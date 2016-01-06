@@ -27,13 +27,34 @@ module Multichain
 
       case v
         when true
-          puts "'#{url}' is verified"
+          puts "The URL '#{url}' is verified"
           exit 0 unless ENV['TEST']
 
         when false
-          puts "'#{url}' is not verified"
+          puts "The URL '#{url}' is not verified"
           exit 1 unless ENV['TEST']
       end
+    end
+
+    desc 'send_url recipient, URL', 'Send a URL to a recipient'
+    def send_url recipient, url
+      data = Client.new.send_url recipient, url
+      out = "You sent '#{url}' to '#{recipient}'\n"
+      out << "\n"
+      out << "The transaction id is\n"
+      out << "  #{data[:id]}\n"
+      out << "\n"
+      out << "The URL\n"
+      out << "  #{url}\n"
+      out << "hashed to\n"
+      out << "  #{data[:hash]}\n"
+      out << "at\n"
+      out << "  #{Time.at(data[:timestamp].to_i).to_datetime}\n"
+      out << "\n"
+      out << "Verify the hash with\n"
+      out << "  multichain verify #{data[:hex]}\n"
+
+      puts out
     end
   end
 end

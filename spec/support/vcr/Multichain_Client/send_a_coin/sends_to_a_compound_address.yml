@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<RPC_USER>:<RPC_PASSWORD>@<RPC_HOST>:<RPC_PORT>/
+    body:
+      encoding: UTF-8
+      string: '{"method":"sendassettoaddress","params":["1WRmkLHymw4dVjfAdAn4Jg3JtjhmXzkBmQvGen","odi-coin",2],"id":"whevs"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Jan 2016 14:32:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '104'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.10.0.0-91d6c15
+    body:
+      encoding: UTF-8
+      string: '{"result":"6fba0c50f1ca5acc52975bea79590e84337497b647e79e4be417066ecc1a7dfe","error":null,"id":"whevs"}
+
+'
+    http_version: 
+  recorded_at: Wed, 06 Jan 2016 14:32:14 GMT
+recorded_with: VCR 3.0.1

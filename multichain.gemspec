@@ -32,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard', '~> 2.13'
   spec.add_development_dependency 'guard-rspec', '~> 4.6'
   spec.add_development_dependency 'terminal-notifier-guard', '~> 1.6'
+  spec.add_development_dependency 'dotenv', '~> 2.0'
   spec.add_development_dependency 'pry'
 end

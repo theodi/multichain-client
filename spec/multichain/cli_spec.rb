@@ -50,7 +50,7 @@ module Multichain
       end
 
       it 'verifies an entry', :vcr do
-        expect(goodoutput).to match "'http://metrics.theodi.org/metrics/github-total-pull-requests' is verified"
+        expect(goodoutput).to match "The URL 'http://metrics.theodi.org/metrics/github-total-pull-requests' is verified"
       end
 
       let :badoutput do
@@ -60,7 +60,36 @@ module Multichain
       end
 
       it 'does not verify a duff entry', :vcr do
-        expect(badoutput).to match "'http://metrics.theodi.org/metrics/github-total-pull-requests' is not verified"
+        expect(badoutput).to match "The URL 'http://metrics.theodi.org/metrics/github-total-pull-requests' is not verified"
+      end
+    end
+
+    context 'send URL' do
+      let :output do
+        capture :stdout do
+          Timecop.freeze Time.local 2016, 01, 06, 16, 12 do
+            subject.send_url 'stu', 'http://uncleclive.herokuapp.com/multichain'
+          end
+        end
+      end
+
+      it 'sends a URL to a wallet', :vcr do
+        expect(output).to match (
+"""You sent 'http://uncleclive.herokuapp.com/multichain' to 'stu'
+
+The transaction id is
+  b4e8561f7a46a3ac30c21e7263dad9466823c676d47c028a1e25028fecd9557a
+
+The URL
+  http://uncleclive.herokuapp.com/multichain
+hashed to
+  32fffb8bdf96b34ad87649fd89ebca4e6a251db396e56fd4ea244ff3942941c8
+at
+  2016-01-06T16:12:00+00:00
+
+Verify the hash with
+  multichain verify 313435323039363732307c687474703a2f2f756e636c65636c6976652e6865726f6b756170702e636f6d2f6d756c7469636861696e7c7b22416363657074223a226170706c69636174696f6e2f6a736f6e227d7c33326666666238626466393662333461643837363439666438396562636134653661323531646233393665353666643465613234346666333934323934316338
+""")
       end
     end
   end
