@@ -1,7 +1,6 @@
 module Multichain
   describe Client do
-    let(:client) { described_class.new(ENV['RPC_USER'], ENV['RPC_PASSWORD'], ENV['RPC_HOST'], ENV['RPC_PORT'] ) }
-
+    let(:client) { described_class.new }
     it 'knows about its asset' do
       expect(client.asset).to eq 'odi-coin'
     end
@@ -53,6 +52,7 @@ module Multichain
               url: 'http://uncleclive.herokuapp.com/blockchain',
               hash: 'd004c795edeb3a90c2a2c115f619274fde4268122f61cf380dbf7f43523d9033',
               timestamp: '1452038400',
+              hex: '313435323033383430307c687474703a2f2f756e636c65636c6976652e6865726f6b756170702e636f6d2f626c6f636b636861696e7c7b22416363657074223a226170706c69636174696f6e2f6a736f6e227d7c64303034633739356564656233613930633261326331313566363139323734666465343236383132326636316366333830646266376634333532336439303333',
               id: 'd4f8a2983463747bd8a83f833bccde21b3a34d5d703d41f0680fb10905b718e5'
             }
           )
