@@ -28,11 +28,11 @@ module Multichain
       case v
         when true
           puts "'#{url}' is verified"
-          exit 0
+          exit 0 unless ENV['TEST']
 
         when false
           puts "'#{url}' is not verified"
-          exit 1
+          exit 1 unless ENV['TEST']
       end
     end
   end
