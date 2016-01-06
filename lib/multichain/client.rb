@@ -1,11 +1,7 @@
 module Multichain
   class Client
 
-    def initialize(username, password, host, port = 2898)
-      #config_file = "#{ENV['HOME']}/.multichain/config.yml"
-      #config_file = 'spec/support/fixtures/config.yml' if ENV['TEST']
-      #@config = YAML.load_file config_file
-
+    def initialize
       @username = config['rpc']['user']
       @password = config['rpc']['password']
       @host = config['rpc']['host']
@@ -96,6 +92,7 @@ module Multichain
         url: url,
         hash: data[:hash],
         timestamp: data[:timestamp],
+        hex: hex,
         id: s['result']
       }
     end

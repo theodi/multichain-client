@@ -1,19 +1,10 @@
 module Multichain
   describe Client do
-
-    let(:username) { 'user' }
-    let(:password) { 'password' }
-    let(:host) { 'example.com' }
-    let(:port) { '6666' }
-    let(:client) { described_class.new(username, password, host, port) }
+    let(:client) { described_class.new }
 
     before(:each) do
       allow(SecureRandom).to receive(:uuid) { 'whevs' }
     end
-
-  #  it 'constucts a url' do
-  #    expect(client.url).to eq('http://user:password@example.com:6666')
-  #  end
 
     [
       'getinfo',
