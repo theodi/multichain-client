@@ -100,7 +100,7 @@ module Multichain
         {
           method: method,
           params: params,
-          id: 'whevs'
+          id: SecureRandom.uuid
         }.to_json
       end
 
