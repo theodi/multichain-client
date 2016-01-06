@@ -7,3 +7,7 @@ With _zero_ units, maybe? Could we then let each player have a wallet with no un
 # Work out the issue with the Master Node
 
 Why does taking out the primary node stop transactions completing?
+
+# Fix up the Vagrant box
+
+To install the gem
