@@ -42,6 +42,31 @@ module Multichain
       ]
 
       s = sendassettoaddress params
+
+      {
+        recipient: recipient,
+        asset: asset,
+        amount: amount,
+        id: s['result']
+      }
+    end
+
+    def send_asset_with_data recipient, amount, data
+      params = [
+        wallets.fetch(recipient),
+        {asset => amount},
+        data
+      ]
+
+      s = sendwithmetadata params
+
+      {
+        recipient: recipient,
+        asset: asset,
+        amount: amount,
+        data: data,
+        id: s['result']
+      }
     end
 
     def method_missing(sym, params = [])
