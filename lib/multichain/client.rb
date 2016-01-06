@@ -69,6 +69,26 @@ module Multichain
       }
     end
 
+    def send_url recipient, url
+      hex = Encoder.hexify url
+      params = [
+        wallets.fetch(recipient),
+        {asset => 0},
+        hex
+      ]
+
+      s = sendwithmetadata params
+      data = Encoder.extract Encoder.decode hex
+
+      {
+        recipient: recipient,
+        url: url,
+        hash: data[:hash],
+        timestamp: data[:timestamp],
+        id: s['result']
+      }
+    end
+
     def method_missing(sym, params = [])
       request = build_request(sym.to_s, params)
       send_request(request)

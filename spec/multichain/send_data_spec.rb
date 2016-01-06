@@ -43,5 +43,21 @@ module Multichain
         )
       end
     end
+
+    context 'send a URL' do
+      it 'sends a URL', :vcr do
+        Timecop.freeze Time.local 2016, 01, 06 do
+          expect(client.send_url 'sam', 'http://uncleclive.herokuapp.com/blockchain').to eq (
+            {
+              recipient: 'sam',
+              url: 'http://uncleclive.herokuapp.com/blockchain',
+              hash: 'd004c795edeb3a90c2a2c115f619274fde4268122f61cf380dbf7f43523d9033',
+              timestamp: '1452038400',
+              id: 'd4f8a2983463747bd8a83f833bccde21b3a34d5d703d41f0680fb10905b718e5'
+            }
+          )
+        end
+      end
+    end
   end
 end
