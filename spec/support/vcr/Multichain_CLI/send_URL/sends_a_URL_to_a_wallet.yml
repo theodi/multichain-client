@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jan 2016 15:35:47 GMT
+      - Wed, 06 Jan 2016 16:08:34 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -42,7 +42,7 @@ http_interactions:
     uri: http://<RPC_USER>:<RPC_PASSWORD>@<RPC_HOST>:<RPC_PORT>/
     body:
       encoding: UTF-8
-      string: '{"method":"sendwithmetadata","params":["1JHkJyBijsUFB2KF6dKwFugcBqDcztLP5E6Eff",{"odi-coin":0},"313435323033383430307c687474703a2f2f756e636c65636c6976652e6865726f6b756170702e636f6d2f6d756c7469636861696e7c7b22416363657074223a226170706c69636174696f6e2f6a736f6e227d7c33326666666238626466393662333461643837363439666438396562636134653661323531646233393665353666643465613234346666333934323934316338"],"id":"0e5788d6-fe48-44cd-ad50-12887d641fa2"}'
+      string: '{"method":"sendwithmetadata","params":["1JHkJyBijsUFB2KF6dKwFugcBqDcztLP5E6Eff",{"odi-coin":0},"313435323033383430307c687474703a2f2f756e636c65636c6976652e6865726f6b756170702e636f6d2f6d756c7469636861696e7c7b22416363657074223a226170706c69636174696f6e2f6a736f6e227d7c33326666666238626466393662333461643837363439666438396562636134653661323531646233393665353666643465613234346666333934323934316338"],"id":"bfe27c37-a6b8-4423-871d-bddcc0ff5e76"}'
     headers:
       Content-Type:
       - application/json
@@ -52,7 +52,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jan 2016 15:35:48 +0000
+      - Wed, 06 Jan 2016 16:08:35 +0000
       Connection:
       - keep-alive
       Content-Length:
@@ -63,7 +63,7 @@ http_interactions:
       - bitcoin-json-rpc/v0.10.0.0-91d6c15
     body:
       encoding: UTF-8
-      string: '{"result":"80e8a4908b3c0c377cbd99b689b243bf4f701ddb20cd66f7cbc644cfee229314","error":null,"id":"0e5788d6-fe48-44cd-ad50-12887d641fa2"}
+      string: '{"result":"b4e8561f7a46a3ac30c21e7263dad9466823c676d47c028a1e25028fecd9557a","error":null,"id":"bfe27c37-a6b8-4423-871d-bddcc0ff5e76"}
 
 '
     http_version: 
