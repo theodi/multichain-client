@@ -6,11 +6,11 @@ require 'multichain/version'
 Gem::Specification.new do |spec|
   spec.name          = 'multichain'
   spec.version       = Multichain::VERSION
-  spec.authors       = ['pikesley']
+  spec.authors       = ['pikesley', 'pezholio']
   spec.email         = ['ops@theodi.org']
 
-  spec.summary       = 'multichain client'
-  spec.description   = 'multichain client'
+  spec.summary       = 'Multichain client'
+  spec.description   = 'Client for Multichain'
   spec.homepage      = 'https://github.com/theodi/multichain-client'
   spec.license       = 'MIT'
 
