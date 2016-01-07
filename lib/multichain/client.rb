@@ -108,7 +108,7 @@ module Multichain
         {
           method: method,
           params: params,
-          id: SecureRandom.uuid
+          id: ::SecureRandom.uuid
         }.to_json
       end
 
