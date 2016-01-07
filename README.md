@@ -22,7 +22,7 @@ In the beginning (2008) there was Bitcoin, and that was OK (except for maybe the
 
 Then create 2 files:
 
-### ~/.multichain/config.yml
+#### ~/.multichain/config.yml
 
     asset: your-coin
     rpc:
@@ -31,9 +31,15 @@ Then create 2 files:
       host: multicoin.host
       port: 1234
 
-### ~/.multichain/wallets.yml
+#### ~/.multichain/wallets.yml
 
     foo:
       primary: wallet_id
     bar:
       primary: other_wallet_id
+
+### Send a URL
+
+Try something like
+
+    multichain send_url foo http://uncleclive.herokuapp.com/multichain
