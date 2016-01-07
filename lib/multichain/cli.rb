@@ -37,24 +37,33 @@ module Multichain
     end
 
     desc 'send_url recipient, URL', 'Send a URL to a recipient'
+    method_option :json,
+                  type: :boolean,
+                  aliases: '-j',
+                  description: 'Return JSON on the console'
     def send_url recipient, url
       data = Client.new.send_url recipient, url
-      out = "You sent '#{url}' to '#{recipient}'\n"
-      out << "\n"
-      out << "The transaction id is\n"
-      out << "  #{data[:id]}\n"
-      out << "\n"
-      out << "The URL\n"
-      out << "  #{url}\n"
-      out << "hashed to\n"
-      out << "  #{data[:hash]}\n"
-      out << "at\n"
-      out << "  #{Time.at(data[:timestamp].to_i).to_datetime}\n"
-      out << "\n"
-      out << "Verify the hash with\n"
-      out << "  multichain verify #{data[:hex]}\n"
 
-      puts out
+      if options[:json]
+        puts data.to_json
+      else
+        out = "You sent '#{data[:url]}' to '#{data[:recipient]}'\n"
+        out << "\n"
+        out << "The transaction id is\n"
+        out << "  #{data[:id]}\n"
+        out << "\n"
+        out << "The URL\n"
+        out << "  #{url}\n"
+        out << "hashed to\n"
+        out << "  #{data[:hash]}\n"
+        out << "at\n"
+        out << "  #{Time.at(data[:timestamp].to_i).to_datetime}\n"
+        out << "\n"
+        out << "Verify the hash with\n"
+        out << "  multichain verify #{data[:hex]}\n"
+
+        puts out
+      end
     end
   end
 end

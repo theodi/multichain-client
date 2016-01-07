@@ -92,5 +92,29 @@ Verify the hash with
 """)
       end
     end
+
+    context 'send URL and return JSON' do
+      let :output do
+        capture :stdout do
+          Timecop.freeze Time.local 2016, 01, 06, 16, 12 do
+            subject.options = {json: true}
+            subject.send_url 'stu', 'http://uncleclive.herokuapp.com/multichain'
+          end
+        end
+      end
+
+      it 'sends a URL to a wallet and returns JSON', :vcr do
+        expect(output).to match (
+          {
+            recipient: 'stu',
+            url: 'http://uncleclive.herokuapp.com/multichain',
+            hash: '32fffb8bdf96b34ad87649fd89ebca4e6a251db396e56fd4ea244ff3942941c8',
+            timestamp: '1452096720',
+            hex: '313435323039363732307c687474703a2f2f756e636c65636c6976652e6865726f6b756170702e636f6d2f6d756c7469636861696e7c7b22416363657074223a226170706c69636174696f6e2f6a736f6e227d7c33326666666238626466393662333461643837363439666438396562636134653661323531646233393665353666643465613234346666333934323934316338',
+            id: 'ef10c7b72b19c001ae38a3d4c5bc9f0a5b1adddc4b09088e99e473191820e86b'
+          }.to_json
+        )
+      end
+    end
   end
 end
